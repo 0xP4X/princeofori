@@ -1,0 +1,37 @@
+# Repository Summary: CyberPort
+
+- **Name**: CyberPort
+- **Language**: TypeScript (Node.js + React)
+- **Structure**:
+  - **client/**: React app (Vite, Tailwind, shadcn/ui, wouter, React Query)
+  - **server/**: Express server (serves API and Vite middleware/dev or static prod build)
+  - **shared/**: Shared types and DB schema (drizzle-orm + zod)
+- **Build/Run**:
+  - **dev**: `npm run dev` → tsx runs server/index.ts with Vite middleware for client
+  - **build**: `npm run build` → Vite builds client to `dist/public`; esbuild bundles server
+  - **start**: `npm start` → runs built server at `dist/index.js`
+  - **db:push**: `npm run db:push` → pushes Drizzle schema to DB (requires DATABASE_URL)
+- **Server**:
+  - Entry: `server/index.ts`
+  - Routes: `server/routes.ts` (HTTP server created; add /api routes here)
+  - Static/Dev: `server/vite.ts` handles Vite dev middlewares and prod static serving
+  - Storage: `server/storage.ts` provides in-memory storage implementing `IStorage`
+- **Client**:
+  - Entry HTML: `client/index.html`
+  - Entry TSX: `client/src/main.tsx`
+  - Router: `wouter` in `client/src/App.tsx`
+  - Pages: `client/src/pages/*`
+  - UI: shadcn components under `client/src/components/ui`
+  - Tailwind config: `tailwind.config.ts`
+- **Shared (DB)**:
+  - Drizzle schema: `shared/schema.ts` (users table, zod insert schema)
+  - Drizzle config: `drizzle.config.ts` (requires `DATABASE_URL` env var)
+- **Vite Aliases**:
+  - `@` → `client/src`
+  - `@shared` → `shared`
+  - `@assets` → `attached_assets`
+- **Ports**:
+  - Server listens on `process.env.PORT || 5000` on `0.0.0.0`
+- **Notes**:
+  - In development, Vite is mounted as middleware (HMR via existing HTTP server)
+  - In production, client build served from `dist/public`
