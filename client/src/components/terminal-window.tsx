@@ -2,7 +2,7 @@ import { ReactNode } from "react";
 
 interface TerminalWindowProps {
   title?: string;
-  children: ReactNode;
+  children?: ReactNode;
   className?: string;
 }
 
