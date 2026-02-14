@@ -126,7 +126,13 @@ export default function Home() {
           <div className="w-3 h-3 bg-matrix/50 rounded-full animate-pulse"></div>
         </div>
         <div className="text-sm text-matrix font-bold">PRINCE OFORI | PROFESSIONAL PORTFOLIO</div>
-        <div className="w-[52px]"></div> {/* Spacer to keep title centered */}
+        <a
+          href="/prince_ofori_cv.pdf"
+          download="Prince_Ofori_CV.pdf"
+          className="bg-matrix/10 hover:bg-matrix/20 text-matrix text-xs font-bold py-1 px-3 border border-matrix/50 rounded transition-all flex items-center gap-2"
+        >
+          <User className="w-3 h-3" /> CV
+        </a>
       </header>
 
       {/* Main Container */}
@@ -343,6 +349,13 @@ export default function Home() {
                         <div>
                           <div className="text-sm font-bold">LinkedIn</div>
                           <div className="text-xs text-text-secondary">Official Profile</div>
+                        </div>
+                      </a>
+                      <a href="/prince_ofori_cv.pdf" download="Prince_Ofori_CV.pdf" className="flex items-center gap-3 p-3 border border-terminal-border rounded hover:bg-matrix/5 transition-all">
+                        <User className="text-matrix" />
+                        <div>
+                          <div className="text-sm font-bold">Resume / CV</div>
+                          <div className="text-xs text-text-secondary">Download PDF</div>
                         </div>
                       </a>
                     </div>
