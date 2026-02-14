@@ -126,7 +126,7 @@ export default function Home() {
           <div className="w-3 h-3 bg-yellow-500/50 rounded-full"></div>
           <div className="w-3 h-3 bg-matrix/50 rounded-full animate-pulse"></div>
         </div>
-        <div className="text-sm text-matrix font-bold">PRINCE OFORI | PROFESSIONAL PORTFOLIO</div>
+        <div className="text-sm text-matrix font-bold">DZUKEY PRINCE OFORI</div>
         <a
           href="/prince_ofori_cv.pdf"
           download="Prince_Ofori_CV.pdf"
