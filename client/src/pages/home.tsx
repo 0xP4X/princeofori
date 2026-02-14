@@ -85,8 +85,9 @@ export default function Home() {
       icon: <Lock className="w-4 h-4" />,
       items: [
         "BSc Computer Science - KNUST (In Progress)",
-        "ALX Software Engineering - Back-End (Sept 2025)",
-        "ALX Professional Development (April 2025)"
+        { name: "Cybersecurity Fundamentals (ISC2)", url: "https://www.credly.com/badges/b448cb54-e048-45f6-95ca-6795b36f4d79" },
+        { name: "Backend Web Development (ALX)", url: "https://savanna.alxafrica.com/certificates/PCN56ncX7Y" },
+        { name: "Professional Foundations (ALX)", url: "https://savanna.alxafrica.com/certificates/5nG9Ns3PcE" }
       ]
     }
   ];
@@ -220,12 +221,19 @@ export default function Home() {
                         {skill.items.map((item, j) => (
                           <div key={j}>
                             {typeof item === 'object' ? (
-                              <div className="flex justify-between text-sm">
-                                <span>{item.name}</span>
-                                <span className="text-matrix font-mono">
-                                  [{'█'.repeat(Math.floor(item.level / 20))}{'░'.repeat(5 - Math.floor(item.level / 20))}] {item.level}%
-                                </span>
-                              </div>
+                              'url' in item ? (
+                                <a href={(item as any).url} target="_blank" rel="noopener noreferrer" className="flex justify-between text-sm group hover:bg-matrix/10 p-1 -mx-1 rounded transition-colors">
+                                  <span className="text-text-secondary group-hover:text-matrix transition-colors">{(item as any).name}</span>
+                                  <span className="text-matrix text-xs flex items-center gap-1 opacity-70 group-hover:opacity-100"><Shield className="w-3 h-3" /> VERIFY</span>
+                                </a>
+                              ) : (
+                                <div className="flex justify-between text-sm">
+                                  <span>{(item as any).name}</span>
+                                  <span className="text-matrix font-mono">
+                                    [{'█'.repeat(Math.floor((item as any).level / 20))}{'░'.repeat(5 - Math.floor((item as any).level / 20))}] {(item as any).level}%
+                                  </span>
+                                </div>
+                              )
                             ) : (
                               <div className="text-sm text-text-secondary">• {item}</div>
                             )}
