@@ -4,7 +4,7 @@ import path from "path";
 import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
 
 export default defineConfig({
-  base: "/0xP4X/", // ✅ REQUIRED for GitHub Pages (must match repo name)
+base: "/podporfolio/", // ✅ MUST match repo name exactly
 
   plugins: [
     react(),
