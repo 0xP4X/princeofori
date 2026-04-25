@@ -8,7 +8,7 @@ import Home from "@/pages/home";
 
 function RouterContainer() {
   return (
-    <Router base="/podporfolio">
+    <Router base="/princeofori">
       <Switch>
         <Route path="/" component={Home} />
         <Route component={NotFound} />

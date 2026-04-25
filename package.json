@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "type": "module",
   "license": "MIT",
-  "homepage": "https://0xP4X.github.io/podporfolio",
+  "homepage": "https://0xP4X.github.io/princeofori",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
