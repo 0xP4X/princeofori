@@ -5,7 +5,7 @@ import { MatrixBackground } from "@/components/matrix-background";
 import { TerminalWindow } from "@/components/terminal-window";
 import { Typewriter } from "@/components/typewriter";
 import { InteractiveTerminal } from "@/components/interactive-terminal";
-import { Shield, Code, Lock, Terminal, User, Mail, Eye, Github, Play, X } from "lucide-react";
+import { Shield, Code, Lock, Terminal, User, Mail, Eye, Github, Play, X, Cpu, Globe } from "lucide-react";
 
 export default function Home() {
   const [showSystemInfo, setShowSystemInfo] = useState(false);
@@ -54,6 +54,7 @@ export default function Home() {
       category: "Programming Languages",
       icon: <Code className="w-4 h-4" />,
       items: [
+        { name: "TypeScript", level: 90 },
         { name: "Python", level: 90 },
         { name: "JavaScript", level: 85 },
         { name: "SQL", level: 80 },
@@ -64,55 +65,71 @@ export default function Home() {
       category: "Frameworks & Tools",
       icon: <Terminal className="w-4 h-4" />,
       items: [
+        { name: "Node.js", level: 88 },
+        { name: "LangChain / LLM Orchestration", level: 85 },
         { name: "Django", level: 85 },
-        { name: "Node.js", level: 80 },
-        { name: "PostgreSQL", level: 75 },
-        { name: "Linux", level: 90 },
+        { name: "Docker", level: 82 },
+        { name: "PostgreSQL", level: 80 },
+        { name: "Linux (Kali/Ubuntu)", level: 92 },
       ]
     },
     {
       category: "Cybersecurity Focus",
       icon: <Shield className="w-4 h-4" />,
       items: [
-        "Penetration Testing",
-        "Secure Backend Development",
-        "Network & Web Application Security",
-        "Security Research"
+        "AI-Powered Offensive Security & Autonomous Red Teaming",
+        "Penetration Testing & Exploit Development",
+        "Network & Web Application Security (OWASP)",
+        "OSINT, Recon & Post-Exploitation",
+        "Secure Backend API Design",
       ]
     },
     {
       category: "Education & Certifications",
       icon: <Lock className="w-4 h-4" />,
       items: [
-        "BSc Computer Science - KNUST (In Progress)",
-        { name: "Cybersecurity Fundamentals (ISC2)", url: "https://www.credly.com/badges/b448cb54-e048-45f6-95ca-6795b36f4d79" },
+        "BSc Computer Science - KNUST, Kumasi Ghana (Expected 2027)",
+        { name: "Cybersecurity Fundamentals (IBM)", url: "https://www.credly.com/badges/b448cb54-e048-45f6-95ca-6795b36f4d79" },
+        { name: "Cloud Computing Fundamentals (IBM)", url: "https://www.credly.com" },
         { name: "Backend Web Development (ALX)", url: "https://savanna.alxafrica.com/certificates/PCN56ncX7Y" },
-        { name: "Professional Foundations (ALX)", url: "https://savanna.alxafrica.com/certificates/5nG9Ns3PcE" }
+        { name: "Professional Foundations (ALX)", url: "https://savanna.alxafrica.com/certificates/5nG9Ns3PcE" },
+        "Programming in Python (Udemy)",
       ]
     }
   ];
 
   const projects = [
     {
-      title: "Scamornah",
+      title: "DrogonClaw",
       status: "ACTIVE",
-      description: "Scam-awareness and verification platform for identifying fraudulent activities.",
-      longDescription: "A platform focused on identifying fraudulent activities, suspicious domains, and social engineering threats, especially within the African digital space. Built with Python and Django.",
-      technologies: ["Python", "Django", "Web Security", "Security Research"],
-      metric: "Scam Detection Platform",
-      details: { focus: "Fraud Detection", region: "Africa", tools: "Security Tools" },
-      demo: "https://scamornah.com"
+      description: "Autonomous AI-powered offensive security framework with a C2 brain, Intelligence Graph, and LangChain ReAct orchestration inside ephemeral Docker sandboxes.",
+      longDescription: "Architected a full Command & Control (C2) brain for autonomous offensive operations — chains recon, exploitation, and post-exploitation via a LangChain ReAct engine inside isolated ephemeral Docker sandboxes. Features a persistent Intelligence Graph mapping discovered assets and vulnerabilities, an AI Evidence Validator scoring findings 0–100% confidence, and a modular Skill Ecosystem (OSINT, network scanners, browser automation, exploit validators) injectable at runtime. Supports CLI and Telegram C2 Gateway for remote mobile mission control. Published to NPM as a globally installable CLI.",
+      technologies: ["TypeScript", "Node.js", "LangChain", "Docker", "Vite", "AI/LLM"],
+      metric: "Autonomous Offensive Security",
+      details: { type: "AI-Powered C2 Framework", stack: "TypeScript + LangChain", install: "npm install -g drogonclaw", status: "Active / NPM Published" },
+      demo: "https://drogonclaw.xyz",
+      repository: "https://github.com/0xP4X/drogonclaw",
     },
     {
-      title: "Pentrax",
+      title: "Pentra-X v2.0.0",
       status: "ACTIVE",
-      description: "Linux-based penetration testing tool for automation and reconnaissance.",
-      longDescription: "A Linux-based penetration testing tool designed to assist security testing, automation, and reconnaissance tasks. Actively evolving with new modules.",
-      technologies: ["Linux", "Python", "Cybersecurity", "Pentesting"],
-      metric: "Modular Pentest Tool",
-      details: { platform: "Linux", category: "Cybersecurity", status: "Active" },
-      repository: "https://github.com/0xP4X/pentra-x.git"
-    }
+      description: "Advanced Linux penetration testing toolkit — 37 tools across 9 attack categories including network recon, web exploitation, wireless, MITM, password cracking, and post-exploitation.",
+      longDescription: "A 37-tool modular pentesting toolkit covering 9 attack categories: network recon, web exploitation (SQLi, XSS, LFI), wireless attacks, social engineering, password cracking, MITM, file encryption, OSINT, and post-exploitation. Integrates Nmap, Metasploit, SQLMap, Aircrack-ng, and Hydra with custom AES-256 encryption, multi-threaded subdomain enumeration, CVE lookups, and 9-language reverse shell templates. Ships with a curses-based CLI menu, YAML config, structured logging, and auto-generated pentest reports (HTML/TXT/JSON). One-command Makefile installer; runs globally as sudo pentrax.",
+      technologies: ["Python", "Linux", "Nmap", "Metasploit", "SQLMap", "Aircrack-ng"],
+      metric: "37 Tools · 9 Attack Categories",
+      details: { platform: "Linux", tools: "37 modules", categories: "9 attack categories", reports: "HTML / TXT / JSON" },
+      repository: "https://github.com/0xP4X/pentra-x",
+    },
+    {
+      title: "Scamornah",
+      status: "ACTIVE",
+      description: "Scam-awareness and verification platform for identifying fraudulent activities, suspicious domains, and social engineering threats in the African digital space.",
+      longDescription: "A platform focused on identifying fraudulent activities, suspicious domains, and social engineering threats, especially within the African digital space. Built with Python and Django to help users verify links, phone numbers, and online identities before engaging.",
+      technologies: ["Python", "Django", "Web Security", "Security Research"],
+      metric: "Scam Detection Platform",
+      details: { focus: "Fraud Detection", region: "Africa", stack: "Python + Django", status: "Live" },
+      demo: "https://scamornah.com",
+    },
   ];
 
   return (
@@ -126,7 +143,10 @@ export default function Home() {
           <div className="w-3 h-3 bg-yellow-500/50 rounded-full"></div>
           <div className="w-3 h-3 bg-matrix/50 rounded-full animate-pulse"></div>
         </div>
-        <div className="text-sm text-matrix font-bold">DZUKEY PRINCE OFORI</div>
+        <div className="text-center">
+          <div className="text-sm text-matrix font-bold">DZUKEY PRINCE OFORI</div>
+          <div className="text-[10px] text-text-secondary tracking-widest">Cybersecurity Researcher · Penetration Tester · Backend Engineer</div>
+        </div>
         <a
           href="/prince_ofori_cv.pdf"
           download="Prince_Ofori_CV.pdf"
@@ -140,7 +160,7 @@ export default function Home() {
       <div className="pt-16 max-w-6xl mx-auto p-4 h-screen flex flex-col">
         {/* Navigation */}
         <div className="mb-6 border-b border-terminal-border pb-4">
-          <div className="flex gap-2">
+          <div className="flex gap-2 flex-wrap">
             {(['welcome', 'skills', 'projects', 'contact'] as const).map((id) => (
               <button
                 key={id}
@@ -170,33 +190,44 @@ export default function Home() {
                   {showSystemInfo && (
                     <div className="space-y-4">
                       <div className="text-cyber-blue text-sm font-bold">
-                        <div>&gt; Identity: Prince Ofori</div>
-                        <div>&gt; Role: Cybersecurity Professional & Backend Engineer</div>
-                        <div>&gt; Status: Online</div>
+                        <div>&gt; Identity: Dzukey Prince Ofori</div>
+                        <div>&gt; Role: Cybersecurity Researcher · Penetration Tester · Backend Engineer</div>
+                        <div>&gt; Location: KNUST, Kumasi, Ghana</div>
+                        <div>&gt; Status: Online · Open to Internships &amp; Junior Roles</div>
                       </div>
                       <Typewriter
-                        text="I specialize in secure system development, penetration testing, and building production-ready backend solutions. Explore my expertise and projects below."
-                        speed={30}
-                        delay={1000}
+                        text="CS student at KNUST building AI-powered offensive security frameworks and production-grade backend systems. I architect autonomous pentesting tools, design modular security toolkits, and treat security as a first-class engineering concern."
+                        speed={28}
+                        delay={800}
                         onComplete={() => setShowNavCommands(true)}
                       />
 
                       {showNavCommands && (
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
-                          <div onClick={() => switchToSection('skills')} className="border border-terminal-border p-4 rounded hover:border-matrix/50 cursor-pointer transition-all hover:bg-matrix/5">
-                            <User className="w-6 h-6 text-matrix mb-2" />
-                            <div className="font-bold text-sm">Skills & Expertise</div>
-                            <div className="text-xs text-text-secondary">Core competencies and credentials.</div>
+                        <div className="space-y-4">
+                          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
+                            <div onClick={() => switchToSection('skills')} className="border border-terminal-border p-4 rounded hover:border-matrix/50 cursor-pointer transition-all hover:bg-matrix/5">
+                              <User className="w-6 h-6 text-matrix mb-2" />
+                              <div className="font-bold text-sm">Skills & Expertise</div>
+                              <div className="text-xs text-text-secondary">Languages, frameworks, certifications.</div>
+                            </div>
+                            <div onClick={() => switchToSection('projects')} className="border border-terminal-border p-4 rounded hover:border-matrix/50 cursor-pointer transition-all hover:bg-matrix/5">
+                              <Code className="w-6 h-6 text-matrix mb-2" />
+                              <div className="font-bold text-sm">Projects</div>
+                              <div className="text-xs text-text-secondary">AI security frameworks &amp; tools.</div>
+                            </div>
+                            <div onClick={() => switchToSection('contact')} className="border border-terminal-border p-4 rounded hover:border-matrix/50 cursor-pointer transition-all hover:bg-matrix/5">
+                              <Mail className="w-6 h-6 text-matrix mb-2" />
+                              <div className="font-bold text-sm">Contact</div>
+                              <div className="text-xs text-text-secondary">Let's collaborate.</div>
+                            </div>
                           </div>
-                          <div onClick={() => switchToSection('projects')} className="border border-terminal-border p-4 rounded hover:border-matrix/50 cursor-pointer transition-all hover:bg-matrix/5">
-                            <Code className="w-6 h-6 text-matrix mb-2" />
-                            <div className="font-bold text-sm">Projects</div>
-                            <div className="text-xs text-text-secondary">Security-focused software.</div>
-                          </div>
-                          <div onClick={() => switchToSection('contact')} className="border border-terminal-border p-4 rounded hover:border-matrix/50 cursor-pointer transition-all hover:bg-matrix/5">
-                            <Mail className="w-6 h-6 text-matrix mb-2" />
-                            <div className="font-bold text-sm">Contact</div>
-                            <div className="text-xs text-text-secondary">Let's collaborate.</div>
+
+                          {/* Leadership highlight */}
+                          <div className="border border-terminal-border/50 p-4 rounded bg-matrix/3 mt-2">
+                            <div className="text-xs text-matrix font-bold uppercase tracking-widest mb-2">// Leadership</div>
+                            <div className="text-sm text-text-secondary">
+                              <span className="text-cyber-blue font-bold">Project Manager</span> — Led a 7-member cross-functional team through full design and delivery of a mobile application at KNUST, coordinating frontend &amp; backend sub-teams, managing sprint timelines, and delivering on-spec.
+                            </div>
                           </div>
                         </div>
                       )}
@@ -250,14 +281,14 @@ export default function Home() {
           {activeSection === 'projects' && (
             <section className="animate-in fade-in duration-500">
               <TerminalWindow>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                   {projects.map((project, i) => (
                     <div key={i} onClick={() => setSelectedProject(i)} className="border border-terminal-border p-5 rounded hover:border-matrix/50 cursor-pointer transition-all group">
                       <div className="flex justify-between items-start mb-2">
                         <h3 className="text-lg font-bold text-cyber-blue group-hover:text-matrix transition-colors">{project.title}</h3>
                         <span className="text-xs bg-matrix/10 text-matrix px-2 py-0.5 rounded">{project.status}</span>
                       </div>
-                      <p className="text-sm text-text-secondary mb-4 line-clamp-2">{project.description}</p>
+                      <p className="text-sm text-text-secondary mb-4 line-clamp-3">{project.description}</p>
                       <div className="flex flex-wrap gap-2">
                         {project.technologies.slice(0, 3).map((t, k) => (
                           <span key={k} className="text-[10px] bg-terminal-border px-2 py-0.5 rounded uppercase">{t}</span>
@@ -305,12 +336,12 @@ export default function Home() {
                           </div>
                           <div className="flex flex-col gap-2">
                             {projects[selectedProject].demo && (
-                              <button onClick={() => window.open(projects[selectedProject].demo as string, '_blank')} className="w-full bg-matrix text-black py-2 rounded text-sm font-bold flex items-center justify-center gap-2 hover:bg-matrix/80">
+                              <button onClick={() => window.open((projects[selectedProject] as any).demo as string, '_blank')} className="w-full bg-matrix text-black py-2 rounded text-sm font-bold flex items-center justify-center gap-2 hover:bg-matrix/80">
                                 <Play className="w-4 h-4" /> View Demo
                               </button>
                             )}
                             {projects[selectedProject].repository && (
-                              <button onClick={() => window.open(projects[selectedProject].repository as string, '_blank')} className="w-full border border-terminal-border py-2 rounded text-sm font-bold flex items-center justify-center gap-2 hover:bg-terminal-border">
+                              <button onClick={() => window.open((projects[selectedProject] as any).repository as string, '_blank')} className="w-full border border-terminal-border py-2 rounded text-sm font-bold flex items-center justify-center gap-2 hover:bg-terminal-border">
                                 <Github className="w-4 h-4" /> Repository
                               </button>
                             )}
@@ -331,32 +362,39 @@ export default function Home() {
                   <div className="space-y-4">
                     <h2 className="text-xl font-bold text-matrix mb-4">Channels</h2>
                     <div className="space-y-3">
-                      <a href="mailto:Princeofori1470@gmail.com" className="flex items-center gap-3 p-3 border border-terminal-border rounded hover:bg-matrix/5 transition-all">
+                      <a href="mailto:princeofori1470@gmail.com" className="flex items-center gap-3 p-3 border border-terminal-border rounded hover:bg-matrix/5 transition-all">
                         <Mail className="text-matrix" />
                         <div>
                           <div className="text-sm font-bold">Email</div>
-                          <div className="text-xs text-text-secondary">Princeofori1470@gmail.com</div>
-                        </div>
-                      </a>
-                      <a href="https://scamornah.com" target="_blank" className="flex items-center gap-3 p-3 border border-terminal-border rounded hover:bg-matrix/5 transition-all">
-                        <Shield className="text-matrix" />
-                        <div>
-                          <div className="text-sm font-bold">Platform</div>
-                          <div className="text-xs text-text-secondary">scamornah.com</div>
+                          <div className="text-xs text-text-secondary">princeofori1470@gmail.com</div>
                         </div>
                       </a>
                       <a href="https://github.com/0xP4X" target="_blank" className="flex items-center gap-3 p-3 border border-terminal-border rounded hover:bg-matrix/5 transition-all">
                         <Github className="text-matrix" />
                         <div>
                           <div className="text-sm font-bold">GitHub</div>
-                          <div className="text-xs text-text-secondary">0xP4X</div>
+                          <div className="text-xs text-text-secondary">github.com/0xP4X</div>
                         </div>
                       </a>
                       <a href="https://www.linkedin.com/in/prince-ofori-40a1062aa/" target="_blank" className="flex items-center gap-3 p-3 border border-terminal-border rounded hover:bg-matrix/5 transition-all">
                         <User className="text-matrix" />
                         <div>
                           <div className="text-sm font-bold">LinkedIn</div>
-                          <div className="text-xs text-text-secondary">Official Profile</div>
+                          <div className="text-xs text-text-secondary">linkedin.com/in/prince-ofori-40a1062aa</div>
+                        </div>
+                      </a>
+                      <a href="https://drogonclaw.xyz" target="_blank" className="flex items-center gap-3 p-3 border border-terminal-border rounded hover:bg-matrix/5 transition-all">
+                        <Globe className="text-matrix" />
+                        <div>
+                          <div className="text-sm font-bold">DrogonClaw</div>
+                          <div className="text-xs text-text-secondary">drogonclaw.xyz</div>
+                        </div>
+                      </a>
+                      <a href="https://scamornah.com" target="_blank" className="flex items-center gap-3 p-3 border border-terminal-border rounded hover:bg-matrix/5 transition-all">
+                        <Shield className="text-matrix" />
+                        <div>
+                          <div className="text-sm font-bold">Scamornah</div>
+                          <div className="text-xs text-text-secondary">scamornah.com</div>
                         </div>
                       </a>
                       <a href="/prince_ofori_cv.pdf" download="Prince_Ofori_CV.pdf" className="flex items-center gap-3 p-3 border border-terminal-border rounded hover:bg-matrix/5 transition-all">
